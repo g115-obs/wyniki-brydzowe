@@ -43,9 +43,9 @@ th{color:var(--muted);font-size:.86rem}
 .boards{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:7px}
 .boardbtn{display:grid;place-items:center;min-height:48px;background:var(--surface);border:1px solid var(--line);border-radius:8px;color:var(--text);text-decoration:none;font-weight:700}
 .boardbtn:hover{background:var(--soft);color:var(--green)}
-.boardgrid{display:grid;grid-template-columns:minmax(420px,1.2fr) minmax(280px,.8fr);gap:16px}
+.boardgrid{display:grid;grid-template-columns:minmax(420px,1.2fr) minmax(280px,.8fr);gap:16px;align-items:start}
 .deal{display:grid;grid-template-columns:1fr 96px 1fr;grid-template-rows:auto auto auto;gap:10px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
-.hand{display:grid;gap:2px}
+.hand{display:grid;gap:2px;align-self:center;align-content:center}
 .north{grid-column:1/4;justify-self:center}
 .west{grid-column:1;grid-row:2;justify-self:end;margin-right:2px}
 .east{grid-column:3;grid-row:2}
@@ -84,8 +84,24 @@ th{color:var(--muted);font-size:.86rem}
 .board-results .col-lead{width:10%}
 .board-results .col-score{width:17%}
 .notice{padding:11px 13px;border-radius:9px;background:#fff7db;color:#654d00}
-.auction{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:8px}
-.auction span{padding:7px;background:var(--soft);border-radius:6px}
-.auction .alert{box-shadow:inset 0 0 0 2px var(--red)}
+.auction-block{margin:12px 0}
+.auction-block h3{margin:0 0 7px;font-size:1rem}
+.auction-table{table-layout:fixed;font-size:.9rem}
+.auction-table th,.auction-table td{padding:6px 5px;text-align:center;border:1px solid var(--line)}
+.auction-table td{height:30px;background:var(--surface);font-weight:700}
+.auction-table td.alert{box-shadow:inset 0 0 0 2px var(--red)}
+.pair-results{table-layout:fixed;font-size:.9rem}
+.pair-results th,.pair-results td{padding:8px 6px}
+.pair-results .col-board{width:5%}
+.pair-results .col-round{width:5%}
+.pair-results .col-axis{width:5%}
+.pair-results .col-opponents{width:20%}
+.pair-results .col-contract{width:10%}
+.pair-results .col-declarer{width:6%}
+.pair-results .col-lead{width:7%}
+.pair-results .col-result{width:6%}
+.pair-results .col-score{width:8%}
+.pair-results .col-points{width:7%}
+.pair-results .col-percent{width:13%}
 .loading{color:var(--muted)}
 @media(max-width:720px){header{align-items:flex-start;flex-direction:column}nav{width:100%;overflow:auto}.pagehead{align-items:flex-start;flex-direction:column}.tournament-row{grid-template-columns:1fr auto}.boardgrid{grid-template-columns:1fr}.deal{grid-template-columns:1fr 72px 1fr;font-size:.86rem}.center{width:68px;height:68px}th,td{padding:9px 8px}.optional{display:none}}
