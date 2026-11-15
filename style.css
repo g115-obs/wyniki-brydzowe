@@ -47,7 +47,7 @@ th{color:var(--muted);font-size:.86rem}
 .deal{display:grid;grid-template-columns:1fr 96px 1fr;grid-template-rows:auto auto auto;gap:10px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
 .hand{display:grid;gap:2px}
 .north{grid-column:1/4;justify-self:center}
-.west{grid-column:1;grid-row:2}
+.west{grid-column:1;grid-row:2;justify-self:end;margin-right:2px}
 .east{grid-column:3;grid-row:2}
 .south{grid-column:1/4;grid-row:3;justify-self:center}
 .center{position:relative;grid-column:2;grid-row:2;align-self:center;width:88px;height:88px;border-radius:10px;background:var(--soft);color:var(--green)}
@@ -66,6 +66,23 @@ th{color:var(--muted);font-size:.86rem}
 .score-summary span{display:flex;justify-content:space-between;padding:10px 12px}
 .score-summary span+span{border-left:1px solid var(--line)}
 .score-summary b{font-size:1.2rem}
+.deal-analysis{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.deal-analysis h3{margin:0 0 8px}
+.dd-table{font-size:.9rem;background:var(--surface)}
+.dd-table th,.dd-table td{padding:5px 8px;text-align:center;border:1px solid var(--line)}
+.dd-table th{color:var(--text)}
+.par-box{display:grid;grid-template-columns:auto auto;align-items:center;gap:2px 14px;margin-top:9px;padding:9px 11px;border-radius:8px;background:var(--soft)}
+.par-box span{font-weight:700;color:var(--green)}
+.par-box strong{text-align:right;font-size:1.12rem}
+.par-box small{grid-column:1/3;text-align:center;color:var(--muted)}
+.board-results{table-layout:fixed}
+.board-results th,.board-results td{padding:8px 7px;white-space:nowrap}
+.board-results .col-table{width:7%}
+.board-results .col-pair{width:7%}
+.board-results .col-contract{width:25%}
+.board-results .col-declarer{width:10%}
+.board-results .col-lead{width:10%}
+.board-results .col-score{width:17%}
 .notice{padding:11px 13px;border-radius:9px;background:#fff7db;color:#654d00}
 .auction{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:8px}
 .auction span{padding:7px;background:var(--soft);border-radius:6px}
