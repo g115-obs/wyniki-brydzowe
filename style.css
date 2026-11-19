@@ -79,11 +79,13 @@ th{color:var(--muted);font-size:.86rem}
 .board-results{table-layout:fixed}
 .board-results th,.board-results td{padding:8px 7px;white-space:nowrap}
 .board-results .col-table{width:7%}
-.board-results .col-pair{width:7%}
-.board-results .col-contract{width:25%}
-.board-results .col-declarer{width:10%}
+.board-results .col-pair{width:8%}
+.board-results .col-contract{width:17%}
+.board-results .col-declarer{width:8%}
 .board-results .col-lead{width:10%}
-.board-results .col-score{width:17%}
+.board-results .col-score{width:9%}
+.board-results .col-board-points{width:9%}
+.board-results .board-points{font-weight:800;background:#f0f8f4}
 .notice{padding:11px 13px;border-radius:9px;background:#fff7db;color:#654d00}
 .auction-block{margin:0;padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
 .auction-block h3{margin:0 0 7px;font-size:1rem}
