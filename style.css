@@ -117,12 +117,12 @@ th{color:var(--muted);font-size:.86rem}
 .viewed-pair>strong{font-size:1.15rem;color:var(--green)}
 .viewed-pair .names{font-weight:750;line-height:1.25}
 .board-overview{display:grid;grid-template-columns:92px minmax(390px,1fr) minmax(255px,300px);gap:16px;align-items:stretch;padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
-.board-identity{display:flex;flex-direction:column;align-items:center;text-align:center;min-height:100%;padding:0 2px}
+.board-identity{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:100%;padding:38px 2px}
 .board-nav-arrow{display:grid;place-items:center;width:38px;height:30px;border-radius:8px;color:var(--green);font-size:1.65rem;font-weight:900;line-height:1;text-decoration:none}
 .board-nav-arrow:not(.disabled):hover{background:var(--soft)}
 .board-nav-arrow.disabled{color:#c8d0cc}
-.board-nav-previous{margin-bottom:7px}
-.board-nav-next{margin-top:auto}
+.board-nav-previous{position:absolute;top:0;left:50%;transform:translateX(-50%)}
+.board-nav-next{position:absolute;bottom:0;left:50%;transform:translateX(-50%)}
 .board-identity>strong{font-size:3.3rem;line-height:.95;color:#111;font-variant-numeric:tabular-nums}
 .board-identity>span{margin-top:8px;font-size:.84rem;font-weight:800}
 .board-identity>small{margin-top:8px;color:var(--muted);line-height:1.35}
