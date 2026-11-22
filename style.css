@@ -60,6 +60,8 @@ th{color:var(--muted);font-size:.86rem}
 .center-w{left:7px;top:50%;transform:translateY(-50%)}
 .hearts{color:var(--red)}
 .diamonds{color:var(--diamond)}
+.clubs{color:var(--green)}
+.spades{color:#111}
 .resultside{padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
 .matchup{display:grid;grid-template-columns:1fr auto;gap:4px 12px;margin-bottom:14px}
 .matchup>span{color:var(--muted);font-weight:700}
@@ -133,6 +135,10 @@ th{color:var(--muted);font-size:.86rem}
 .dd-table th,.dd-table td{padding:5px 7px;height:29px}
 .dd-table thead th:first-child{width:28px}
 .dd-table .nt{color:#1016a5;font-weight:900}
+.dd-table th.spades{color:#111;font-weight:900}
+.dd-table th.hearts{color:var(--red);font-weight:900}
+.dd-table th.diamonds{color:var(--diamond);font-weight:900}
+.dd-table th.clubs{color:var(--green);font-weight:900}
 .par-box{align-self:end;display:flex;justify-content:flex-end;align-items:baseline;gap:7px;margin:0;padding:9px 3px 0;background:transparent;border-top:1px solid var(--line);white-space:nowrap}
 .par-box span{color:var(--text);font-weight:500}
 .par-box strong{font-size:1rem}
@@ -144,6 +150,7 @@ th{color:var(--muted);font-size:.86rem}
 .auction-table th{border-bottom:1px solid var(--line)}
 .auction-table td{height:35px;background:transparent}
 .auction-call{display:inline-flex;align-items:center;justify-content:center;min-width:58px;min-height:28px;padding:3px 8px;border:1px solid #d5dbe2;border-radius:7px;background:#fff;box-shadow:0 2px 3px #0002;font-size:1.02rem;font-weight:850}
+.auction-call .suit{font-size:1em}
 .auction-call.alert{outline:2px solid var(--red);outline-offset:1px}
 .auction-call.final-contract{color:#fff;background:var(--green);border-color:var(--green);box-shadow:0 0 0 3px #f4c54d,0 2px 4px #0003}
 .auction-call.final-contract .suit{color:inherit}
@@ -151,8 +158,11 @@ th{color:var(--muted);font-size:.86rem}
 .contract-summary>div{display:flex;flex-direction:column;justify-content:center;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:9px}
 .contract-summary>div>span{color:var(--muted);font-size:.8rem;font-weight:700}
 .contract-summary>div>strong{margin-top:2px;font-size:1.18rem}
+.contract-summary .final-contract-line{display:flex;align-items:baseline;justify-content:center;gap:4px;white-space:nowrap}
+.contract-summary .declarer{margin-left:4px;font-size:1em}
 .contract-summary>div>small{margin-top:2px;color:var(--muted)}
 .contract-summary .score-summary{display:grid;grid-template-columns:1fr 1fr;margin:0;padding:0;overflow:hidden}
+.contract-summary .score-summary span{align-items:center;justify-content:center;gap:8px;text-align:center}
 .selected-result td{background:#e8f5ef;font-weight:750;border-top:2px solid var(--green);border-bottom:2px solid var(--green)}
 .selected-result td:first-child{box-shadow:inset 4px 0 var(--green)}
 .selected-result td:last-child{box-shadow:inset -2px 0 var(--green)}
