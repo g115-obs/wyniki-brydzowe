@@ -162,7 +162,9 @@ th{color:var(--muted);font-size:.86rem}
 .contract-summary .declarer{margin-left:4px;font-size:1em}
 .contract-summary>div>small{margin-top:2px;color:var(--muted)}
 .contract-summary .score-summary{display:grid;grid-template-columns:1fr 1fr;margin:0;padding:0;overflow:hidden}
-.contract-summary .score-summary span{align-items:center;justify-content:center;gap:8px;text-align:center}
+.contract-summary .score-summary span{position:relative;display:grid;place-items:center;padding:24px 10px 10px;text-align:center}
+.contract-summary .score-summary span small{position:absolute;top:8px;left:10px;color:var(--muted);font-size:.8rem;font-weight:700}
+.contract-summary .score-summary span b{font-size:1.18rem;line-height:1.2}
 .selected-result td{background:#e8f5ef;font-weight:750;border-top:2px solid var(--green);border-bottom:2px solid var(--green)}
 .selected-result td:first-child{box-shadow:inset 4px 0 var(--green)}
 .selected-result td:last-child{box-shadow:inset -2px 0 var(--green)}
