@@ -107,4 +107,54 @@ th{color:var(--muted);font-size:.86rem}
 .pair-results .col-points{width:7%}
 .pair-results .col-percent{width:13%}
 .loading{color:var(--muted)}
-@media(max-width:720px){header{align-items:flex-start;flex-direction:column}nav{width:100%;overflow:auto}.pagehead{align-items:flex-start;flex-direction:column}.tournament-row{grid-template-columns:1fr auto}.boardgrid{grid-template-columns:1fr}.deal{grid-template-columns:1fr 72px 1fr;font-size:.86rem}.center{width:68px;height:68px}th,td{padding:9px 8px}.optional{display:none}}
+
+/* Widok pojedynczego rozdania wzorowany na zwartej karcie protokołu. */
+.viewed-pairs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 14px}
+.viewed-pair{display:grid;grid-template-columns:54px 1fr;align-items:center;min-height:66px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.viewed-pair>strong{font-size:1.15rem;color:var(--green)}
+.viewed-pair .names{font-weight:750;line-height:1.25}
+.board-overview{display:grid;grid-template-columns:92px minmax(390px,1fr) minmax(255px,300px);gap:16px;align-items:stretch;padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.board-identity{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:2px}
+.board-identity>strong{font-size:3.3rem;line-height:.95;color:#111;font-variant-numeric:tabular-nums}
+.board-identity>span{margin-top:8px;font-size:.84rem;font-weight:800}
+.board-identity>small{margin-top:auto;color:var(--muted);line-height:1.35}
+.deal-holder{min-width:0;display:grid;align-items:center}
+.deal-holder .deal{padding:0;border:0;border-radius:0;gap:8px}
+.deal-holder .hand{font-weight:650;line-height:1.25;white-space:nowrap}
+.deal-holder .west{margin-right:8px}
+.center{width:82px;height:82px;background:transparent;color:#fff}
+.center b{display:grid;place-items:center;width:31px;height:31px;border-radius:50%;background:var(--green);font-size:1rem}
+.center-n{top:0;left:50%;transform:translateX(-50%);background:#b51f2e!important}
+.center-e{right:0;top:50%;transform:translateY(-50%)}
+.center-s{bottom:0;left:50%;transform:translateX(-50%);background:#b51f2e!important}
+.center-w{left:0;top:50%;transform:translateY(-50%)}
+.deal-analysis{display:grid;grid-template-rows:auto auto 1fr;gap:10px;margin:0;padding:0;border:0;align-content:start}
+.dd-table{font-size:.86rem;table-layout:fixed}
+.dd-table th,.dd-table td{padding:5px 7px;height:29px}
+.dd-table thead th:first-child{width:28px}
+.dd-table .nt{color:#1016a5;font-weight:900}
+.par-box{align-self:end;display:flex;justify-content:flex-end;align-items:baseline;gap:7px;margin:0;padding:9px 3px 0;background:transparent;border-top:1px solid var(--line);white-space:nowrap}
+.par-box span{color:var(--text);font-weight:500}
+.par-box strong{font-size:1rem}
+.analysis-missing{align-self:center}
+.auction-block{width:min(100%,650px);margin:14px auto 0;padding:12px 14px}
+.auction-block h2{margin:0 0 8px;font-size:1.15rem}
+.auction-table{width:auto;min-width:360px;margin:0 auto;table-layout:fixed}
+.auction-table th,.auction-table td{width:90px;padding:3px 5px;border:0}
+.auction-table th{border-bottom:1px solid var(--line)}
+.auction-table td{height:35px;background:transparent}
+.auction-call{display:inline-flex;align-items:center;justify-content:center;min-width:58px;min-height:28px;padding:3px 8px;border:1px solid #d5dbe2;border-radius:7px;background:#fff;box-shadow:0 2px 3px #0002;font-size:1.02rem;font-weight:850}
+.auction-call.alert{outline:2px solid var(--red);outline-offset:1px}
+.auction-call.final-contract{color:#fff;background:var(--green);border-color:var(--green);box-shadow:0 0 0 3px #f4c54d,0 2px 4px #0003}
+.auction-call.final-contract .suit{color:inherit}
+.contract-summary{display:grid;grid-template-columns:1.3fr .8fr 1fr;gap:12px;align-items:stretch;width:min(100%,780px);margin:10px auto 20px}
+.contract-summary>div{display:flex;flex-direction:column;justify-content:center;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:9px}
+.contract-summary>div>span{color:var(--muted);font-size:.8rem;font-weight:700}
+.contract-summary>div>strong{margin-top:2px;font-size:1.18rem}
+.contract-summary>div>small{margin-top:2px;color:var(--muted)}
+.contract-summary .score-summary{display:grid;grid-template-columns:1fr 1fr;margin:0;padding:0;overflow:hidden}
+.selected-result td{background:#e8f5ef;font-weight:750;border-top:2px solid var(--green);border-bottom:2px solid var(--green)}
+.selected-result td:first-child{box-shadow:inset 4px 0 var(--green)}
+.selected-result td:last-child{box-shadow:inset -2px 0 var(--green)}
+@media(max-width:850px){.board-overview{grid-template-columns:80px minmax(350px,1fr)}.deal-analysis{grid-column:1/3;grid-template-columns:1fr 1fr;grid-template-rows:auto auto}.par-box{grid-column:1/3}.board-identity>small{margin-top:20px}}
+@media(max-width:720px){header{align-items:flex-start;flex-direction:column}nav{width:100%;overflow:auto}.pagehead{align-items:flex-start;flex-direction:column}.tournament-row{grid-template-columns:1fr auto}.viewed-pairs{grid-template-columns:1fr}.board-overview{grid-template-columns:70px minmax(270px,1fr);padding:10px;gap:8px}.board-identity>strong{font-size:2.7rem}.deal{grid-template-columns:1fr 70px 1fr;font-size:.82rem}.center{width:66px;height:66px}.center b{width:27px;height:27px;font-size:.86rem}.deal-analysis{grid-column:1/3}.contract-summary{grid-template-columns:1fr 1fr}.contract-summary .score-summary{grid-column:1/3}.auction-block{overflow-x:auto}.auction-table th,.auction-table td{width:76px}.auction-call{min-width:52px}.board-results{min-width:780px}th,td{padding:9px 8px}.optional{display:none}}
