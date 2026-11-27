@@ -14,3 +14,13 @@
 @media(max-width:650px){.bwk-header{flex-direction:row;align-items:center;font-size:1.1rem}.bwk-home img{width:105px}.bwk-main-header .bwk-home img{width:132px}}
 .bwk-embedded .bwk-header{display:none}
 .back-board[hidden],.bwk-heading nav [hidden]{display:none}
+
+/* The logo follows the viewport edge; menu alignment follows the content. */
+.bwk-header{position:relative;justify-content:flex-start;padding-inline:16px}
+.bwk-main-header,.bwk-results-header{display:grid;grid-template-columns:auto minmax(0,1fr)}
+.bwk-main-header .bwk-heading,.bwk-results-header .bwk-heading{display:contents}
+.bwk-main-header .bwk-heading>strong,.bwk-results-header .bwk-heading>strong{margin:0;align-self:center}
+.bwk-main-header .bwk-heading nav,.bwk-results-header .bwk-heading nav{grid-column:1/-1;align-self:end;margin:0 0 0 max(0px,calc((100% - 1080px)/2));width:auto}
+@media(min-width:1650px){
+  .bwk-main-header .bwk-heading nav,.bwk-results-header .bwk-heading nav{position:absolute;left:max(16px,calc((100% - 1080px)/2));right:16px;bottom:4px;margin:0}
+}
