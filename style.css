@@ -9,6 +9,8 @@ header{display:flex;align-items:center;justify-content:space-between;gap:20px;pa
 nav{display:flex;gap:5px}
 nav a{padding:9px 11px;color:var(--muted);text-decoration:none;border-radius:8px}
 nav a:hover{background:var(--soft);color:var(--green)}
+nav{flex-wrap:wrap}
+nav .club-return{color:var(--green);background:var(--soft);font-weight:700;white-space:nowrap}
 main{max-width:1080px;margin:auto;padding:24px 16px;min-height:70vh}
 footer{text-align:center;padding:18px;color:var(--muted)}
 h1{margin:3px 0 6px;font-size:clamp(1.5rem,4vw,2.2rem)}
