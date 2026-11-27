@@ -10,7 +10,15 @@ function contractHTML(r){if(r.contract_strain==='PASS')return '4 pasy';const str
 function delta(v){return v===0?'=':v>0?`+${v}`:String(v??'')}
 function lead(v){if(!v)return '—';return `${ranks[v.slice(1)]||v.slice(1)}<span class="suit ${suitClass(v[0])}">${suits[v[0]]||''}</span>`}
 function bidHTML(value){const call=String(value||'').trim().toUpperCase();if(call==='P')return 'PAS';if(call==='X'||call==='XX')return call;const match=call.match(/^([1-7])(NT|[SHDC])$/);return match?`${match[1]}<span class="suit ${suitClass(match[2])}">${suits[match[2]]}</span>`:esc(call)}
-function parContractHTML(value){const raw=String(value||'').trim(),compact=raw.replace(/[\s-]+/g,''),match=compact.match(/^([1-7])(NT|[SHDC♠♥♦♣])(X{0,2})([NESW])?(.*)$/i);if(!match)return esc(raw||'—');const strainMap={'♠':'S','♥':'H','♦':'D','♣':'C'},strain=strainMap[match[2]]||match[2].toUpperCase();return `${match[1]}<span class="suit ${suitClass(strain)}">${suits[strain]}</span>${esc(match[3]||'')}${match[4]?` <b>${esc(match[4])}</b>`:''}${esc(match[5]||'')}`}
+function parContractHTML(value){
+  const raw=String(value||'').trim(),compact=raw.replace(/[\s\uFE0E\uFE0F]/g,'').replace(/×/g,'X');
+  const match=compact.match(/^([1-7])(NT|BA|[SHDC♠♥♦♣])(X{0,2})(?:-?([NESW]))?([+-]\d+|=)?$/i);
+  if(!match)return esc(raw||'—');
+  const strain=({'♠':'S','♥':'H','♦':'D','♣':'C',BA:'NT'})[match[2].toUpperCase()]||match[2].toUpperCase();
+  const extra=match[5]?.startsWith('+')?Number(match[5]):0;
+  const normalize=extra>0&&Number(match[1])+extra<=7;
+  return `${normalize?Number(match[1])+extra:match[1]}<span class="suit ${suitClass(strain)}">${suits[strain]}</span>${normalize?'':esc(match[3])}${match[4]?` <b>${esc(match[4].toUpperCase())}</b>`:''}${normalize?'':esc(match[5]||'')}`;
+}
 function splitScore(nsValue){const v=Number(nsValue||0);return v>=0?{ns:String(v),ew:''}:{ns:'',ew:String(Math.abs(v))}}
 function boardPoints(v){if(v===null||v===undefined||v==='')return '—';const n=Number(v);return Number.isInteger(n)?String(n):n.toFixed(2).replace('.',',')}
 function pairScore(axis,value){const positive=Number(value||0)>=0,winning=positive?axis:(axis==='NS'?'WE':'NS');return winning==='NS'?{ns:String(Math.abs(value)),ew:''}:{ns:'',ew:String(Math.abs(value))}}
